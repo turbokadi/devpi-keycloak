@@ -18,9 +18,13 @@ def devpiserver_auth_request(request, userdict, username, password):
         keycloak_realm,
         "admin-cli"
     )
-    token: Token = service.auth(username,password)
-    if (token.check_auth()):
-        token.logout()
-        return {"status":"ok"}
-    else:
+    
+    try:
+        token: Token = service.auth(username,password)
+        if (token.check_auth()):
+            token.logout()
+            return {"status":"ok"}
+        else:
+            return None
+    except:
         return None

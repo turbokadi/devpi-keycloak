@@ -4,3 +4,4 @@ build/
 *.py[co]
 *.orig
 .DS_Store
+.vscode
