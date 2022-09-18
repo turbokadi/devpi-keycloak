@@ -37,7 +37,7 @@ setup(
     packages=['devpi_keycloak'],
     entry_points={
         'devpi_server': [
-            "devpi-keycloak = devpi_keycloak.entrypoint"]},
+            "devpi-keycloak = devpi_keycloak.main"]},
     install_requires=[
         'devpi-server>=4.0.0',
         'keycloak-basic>=1.2.1'
